@@ -28,7 +28,7 @@ $(function() {
 
 	function set_stage( post_id ) {
 		$('#stage').fadeOut('slow').load(
-			'/wp/wp-admin/admin-ajax.php',
+			'/wp-admin/admin-ajax.php',
 			{ action: 'get_participant_summary', post_id: post_id },
 			function() { $('#stage').fadeIn('slow'); }
 		);
@@ -177,7 +177,7 @@ $(function() {
 		$('html, body').scrollTop(0);
 		var clip_id = $(this).data('clip-id');
 		$(this).parents('.participant-clip-listing').addClass('active').siblings().removeClass('active');
-		$('#stage').slideUp().load('/wp/wp-admin/admin-ajax.php',
+		$('#stage').slideUp().load('/wp-admin/admin-ajax.php',
 			{ action: 'get_participant_clip', clip_id: clip_id },
 			function() { $('#stage').delay(250).slideDown(); }
 		);
